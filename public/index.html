@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+  <title>Money Counter</title>
+  <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body onload="reFresh()">
+  <div id="container">
+    <input id="hundreds" type="number">
+    <input id="fifties" type="number">
+    <input id="twenties" type="number">
+    <input id="tens" type="number">
+    <input id="fives" type="number">
+    <h5 id="output"></h5>
+    <button onclick="countMoney()">Count</button>
+  </div>
+
+  <script>
+    var countMoney = function() {
+      x100 = document.getElementById("hundreds").value;
+      x50 = document.getElementById("fifties").value;
+      x20 = document.getElementById("twenties").value;
+      x10 = document.getElementById("tens").value;
+      x5 = document.getElementById("fives").value;
+
+      totalCash = Number(x100 * 100) + Number(x50 * 50) + Number(x20 * 20) + Number(x10 * 10) + Number(x5 * 5);
+      document.getElementById("output").innerHTML = totalCash;
+    }
+
+    var reFresh = function() {
+      document.getElementById("hundreds").value = "";
+      document.getElementById("fifties").value = "";
+      document.getElementById("twenties").value = "";
+      document.getElementById("tens").value = "";
+      document.getElementById("fives").value = "";
+    }
+  </script>
+</body>
+</html>
